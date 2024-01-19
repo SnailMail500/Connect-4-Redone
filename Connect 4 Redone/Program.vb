@@ -1,4 +1,5 @@
 Imports System
+Imports System.Diagnostics.SymbolStore
 Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports System.Security.Cryptography.X509Certificates
@@ -240,7 +241,7 @@ Module Program
             For j As Integer = 4 To 6
                 If gameBoard(i, j) = symbol And gameBoard(i + 1, j - 1) = symbol And gameBoard(i + 2, j - 2) = symbol And gameBoard(i + 3, j - 3) = symbol Then
                     Return True
-                Else 'not writing all that out again for an else if
+                Else
                     Return False
                 End If
             Next
@@ -249,22 +250,20 @@ Module Program
     End Function
     Function checkDiagonalLeft(ByVal symbol) 'Instead of using symbols here i could and maybe should have passed through a player number and got it to check, or maybe i could have added an extra if statement (but wouldn't that be repeating code which is... bad practice?)
         For i As Integer = 1 To 4
-            For j As Integer = 4 To 6
-                If gameBoard(i, j) = symbol And gameBoard(i - 1, j + 1) = symbol And gameBoard(i - 2, j + 2) = symbol And gameBoard(i - 3, j + 3) = symbol Then
+            For j As Integer = 4 To 6 'I think this works ish
+                If i < 7 And j < 6 And gameBoard(i, j) = symbol And gameBoard(i + 1, j + 1) = symbol And gameBoard(i + 2, j + 2) = symbol And gameBoard(i + 3, j + 3) = symbol Then
                     Return True
+                ElseIf i >= 7 Or j <= 6 Then
+                    Return False
                 Else
                     Return False
                 End If
             Next
         Next
         Return False
-        'If True Then
-        '    Console.WriteLine("a")
-        'Else
-        '   Console.WriteLine("b")
-        'End If
-        'This was an experiment to test if an else is needed in an if statement because it wasn't obvious to me... I'm sure that ive used if without else before
     End Function
+    REM This is dodgy but it from what I understand will work- if it works I'll be amazed but I have really struggled- checking this doesn't really make sense to me still
+
     'Sub saveWin(nameOne, nameTwo)
     'Dim openedFile As FileStream = New FileStream("saved.txt", FileMode.CreateNew, FileAccess.Write)
     'For i As Integer = 1 To 7
@@ -276,6 +275,7 @@ Module Program
     'It'll be nice in a couple of weeks when i can do file handling...
     'Console.WriteLine("Coming soon, after I'm not finding out how to do file handling from some obnoxious stackoverflow post which makes no sense")
     'End Sub
+
     'Sub loadWin(nameOne, nameTwo)
     'Dim openedFile As FileStream = New FileStream("saved.txt", FileMode.Open, FileAccess.Read)
     'Console.WriteLine(openedFile.Read)
