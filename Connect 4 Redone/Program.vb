@@ -251,9 +251,9 @@ Module Program
     Function checkDiagonalLeft(ByVal symbol) 'Instead of using symbols here i could and maybe should have passed through a player number and got it to check, or maybe i could have added an extra if statement (but wouldn't that be repeating code which is... bad practice?)
         For i As Integer = 1 To 4
             For j As Integer = 4 To 6 'I think this works ish
-                If i < 5 And j < 4 And gameBoard(i, j) = symbol And gameBoard(i + 1, j + 1) = symbol And gameBoard(i + 2, j + 2) = symbol And gameBoard(i + 3, j + 3) = symbol Then
+                If i < 4 And j < 3 And gameBoard(i, j) = symbol And gameBoard(i + 1, j + 1) = symbol And gameBoard(i + 2, j + 2) = symbol And gameBoard(i + 3, j + 3) = symbol Then
                     Return True
-                ElseIf i >= 7 Or j <= 6 Then
+                ElseIf i >= 4 Or j <= 3 Then
                     Return False
                 Else
                     Return False
