@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Connect 4 Redone", "Connect 4 Redone\Connect 4 Redone.vbproj", "{FD8DAB04-20BF-4881-A4BA-483A3987D5BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD8DAB04-20BF-4881-A4BA-483A3987D5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8DAB04-20BF-4881-A4BA-483A3987D5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8DAB04-20BF-4881-A4BA-483A3987D5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8DAB04-20BF-4881-A4BA-483A3987D5BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85CFBB1E-930E-4C91-989F-B691878C55EA}
+	EndGlobalSection
+EndGlobal
